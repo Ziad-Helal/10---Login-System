@@ -1,0 +1,258 @@
+/*
+==============================
+    CONTENT
+==============================
+  1- Reset Styles
+    1.1- Global
+    1.2- Body
+    1.3- Fieldset
+    1.4- Button
+    1.5- Input
+    1.6- Anchor
+  2- Utility Classes
+    2.1- Cards
+    2.2- widths
+  3- Main Content Styles
+    3.1- Layout
+      3.1.1- Header
+      3.1.2- Main Content
+    3.2- Home Page
+    3.3- Login Page
+    3.4- Registeration Page
+    3.5- Not Found Page
+*/
+
+/* ==============================
+  1- Reset Styles
+============================== */
+
+/* 1.1- Global
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 1.2- Body
+============================== */
+body {
+  color: white;
+  background-color: black;
+}
+
+/* 1.3- Fieldset
+============================== */
+fieldset {
+  border: none;
+}
+
+/* 1.4- Button
+============================== */
+
+button {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid white;
+  border-radius: 7px;
+  background-color: transparent;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 300ms, background-color 300ms;
+}
+
+button:hover {
+  color: black;
+  background-color: white;
+}
+
+/* 1.5- Input
+============================== */
+input {
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: black;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* 1.6- Anchor
+============================== */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+  2- Utility Classes
+============================== */
+
+/* 2.1- Cards
+============================== */
+
+.card,
+.card-lg {
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.card {
+  box-shadow: 1px 1px 5px gray;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 10px gray;
+}
+
+.card-lg {
+  box-shadow: 2px 2px 10px gray;
+}
+
+/* 2.2- widths
+============================== */
+.w-80-m-1200 {
+  width: 80%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* ==============================
+  3- Main Content Styles
+============================== */
+
+/* 3.1- Layout
+============================== */
+
+/* ========== 3.1.1- Header ========== */
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: black;
+  box-shadow: 0 1px 10px gray;
+}
+
+#header > div {
+  width: 80%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 a.localPage {
+  text-decoration: none;
+}
+
+/* ========== 3.1.2- Main Content ========== */
+
+#dynamicPageContent {
+  min-height: 100svh;
+  padding-block: 6rem 1rem;
+}
+
+/* 3.2- Home Page
+============================== */
+
+.welcome {
+  padding: 2rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.welcome .user {
+  color: chocolate;
+}
+
+.allUsers {
+  padding: 0;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.allUsers .heading {
+  padding: 1rem;
+  font-size: 2rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 1px 5px gray;
+}
+
+.allUsers ul {
+  list-style: none;
+  padding-inline: 1rem;
+}
+
+.allUsers li {
+  padding: 1rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.allUsers li.currentUser::after {
+  content: "Me";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: chocolate;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.allUsers li .userName {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.allUsers li .userEmail {
+  color: gray;
+}
+
+/* 3.3- Login Page
+============================== */
+/* &&& */
+/* 3.4- Registeration Page
+============================== */
+
+form legend {
+  margin-bottom: 1rem;
+}
+
+form input.card {
+  padding: 0.75rem 1rem;
+}
+
+form .footer {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form p[class*="Feedback"] {
+  padding-left: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* 3.5- Not Found Page
+============================== */
