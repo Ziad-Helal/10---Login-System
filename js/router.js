@@ -1,3 +1,5 @@
+import { runAppropriatePageScript } from "./index.js";
+
 var routes = {
   "/": {
     location: "./html-templates/index.html",
@@ -44,6 +46,7 @@ async function routeChangeHandler() {
 
   document.head.querySelector("title").innerText = route.title;
   document.getElementById("dynamicPageContent").innerHTML = newPage;
+  runAppropriatePageScript(pathname);
 
   routerInit(false);
 }

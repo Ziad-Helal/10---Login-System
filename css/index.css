@@ -154,6 +154,10 @@ h1 a.localPage {
   text-decoration: none;
 }
 
+#logoutButton {
+  display: none;
+}
+
 /* ========== 3.1.2- Main Content ========== */
 
 #dynamicPageContent {
@@ -170,7 +174,7 @@ h1 a.localPage {
   text-align: center;
 }
 
-.welcome .user {
+.welcome #user {
   color: chocolate;
 }
 
@@ -188,7 +192,7 @@ h1 a.localPage {
   box-shadow: 0 1px 5px gray;
 }
 
-.allUsers ul {
+.allUsers ul#users {
   list-style: none;
   padding-inline: 1rem;
 }
@@ -214,6 +218,10 @@ h1 a.localPage {
   background-color: chocolate;
   font-size: 1.75rem;
   font-weight: 700;
+}
+
+.allUsers li.currentUser .userName {
+  color: chocolate;
 }
 
 .allUsers li .userName {
@@ -252,6 +260,7 @@ form p[class*="Feedback"] {
   padding-left: 1rem;
   height: 1rem;
   margin-top: 0.25rem;
+  color: red;
 }
 
 /* 3.5- Not Found Page
