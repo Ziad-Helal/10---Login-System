@@ -1,4 +1,5 @@
 import { runAppropriatePageScript } from "./index.js";
+import { redirectUnAuthorizedUsers } from "./user.js";
 
 var routes = {
   "/": {
@@ -37,7 +38,10 @@ function loadNewPage(event) {
 
 async function routeChangeHandler() {
   var { pathname } = location;
-  if (pathname.length == 0) pathname = "/";
+  if (pathname == "/") {
+    redirectUnAuthorizedUsers();
+    return;
+  }
 
   var route = routes[pathname] || routes[404];
   var newPage = await fetch(route.location).then(function (response) {

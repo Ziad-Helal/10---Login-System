@@ -1,11 +1,6 @@
 var currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
 var users = JSON.parse(localStorage.getItem("users")) || [];
 
-(function () {
-  var { pathname } = location;
-  if (pathname == "/" && !currentUser.userEmail) location.replace("/login");
-})();
-
 export function signUserUp(userName, userEmail, userPassword) {
   users.push({ userName, userEmail, userPassword });
   localStorage.setItem("users", JSON.stringify(users));
@@ -22,4 +17,8 @@ export function logUserOut() {
   currentUser = {};
   localStorage.setItem("currentUser", "{}");
   location.assign("/login");
+}
+
+export function redirectUnAuthorizedUsers() {
+  currentUser.userEmail || location.replace("/login");
 }
