@@ -2,13 +2,26 @@
   <form class="w-80-m-1200 card-lg">
     <fieldset>
       <legend><h2>Login</h2></legend>
-      <input type="text" placeholder="Your Email" class="card" />
+      <input
+        type="text"
+        placeholder="Your Email"
+        id="emailInput"
+        class="card"
+        autofocus
+        required
+      />
       <p class="emailFeedback"></p>
-      <input type="password" placeholder="Your Password" class="card" />
+      <input
+        type="password"
+        placeholder="Your Password"
+        id="passwordInput"
+        class="card"
+        required
+      />
       <p class="passwordFeedback"></p>
     </fieldset>
     <div class="footer">
-      <button type="submit">Submit</button>
+      <button type="submit" id="loginButton">Submit</button>
       <p>
         Don't have an account?
         <a href="/register" class="localPage">Sign up</a>!

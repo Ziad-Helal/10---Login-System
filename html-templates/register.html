@@ -2,13 +2,21 @@
   <form class="w-80-m-1200 card-lg">
     <fieldset>
       <legend><h2>Register</h2></legend>
-      <input type="text" id="nameInput" placeholder="Your Name" class="card" />
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="Your Name"
+        class="card"
+        autofocus
+        required
+      />
       <p class="userNameFeedback"></p>
       <input
         type="text"
         id="emailInput"
         placeholder="Your Email"
         class="card"
+        required
       />
       <p class="emailFeedback"></p>
       <input
@@ -16,6 +24,7 @@
         id="passwordInput"
         placeholder="Create a Password"
         class="card"
+        required
       />
       <p class="passwordFeedback"></p>
     </fieldset>

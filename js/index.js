@@ -1,5 +1,12 @@
 import routerInit from "./router.js";
-import { logUserOut, signUserUp } from "./user.js";
+import {
+  isCorrectPassword,
+  isRegistedEmail,
+  isValidUser,
+  logUserIn,
+  logUserOut,
+  signUserUp,
+} from "./user.js";
 
 var logoutButton = document.getElementById("logoutButton");
 
@@ -38,6 +45,21 @@ function HomePageScript() {
 
 function loginPageScript() {
   logoutButton.style.display = "none";
+
+  var emailInput = document.getElementById("emailInput");
+  var emailInputFeedback = document.querySelector(".emailFeedback");
+  isRegistedEmail(emailInput, emailInputFeedback);
+
+  var passwordInput = document.getElementById("passwordInput");
+  var passwordInputFeedback = document.querySelector(".passwordFeedback");
+  isCorrectPassword(passwordInput, passwordInputFeedback, emailInput);
+
+  var loginButton = document.getElementById("loginButton");
+  loginButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    isValidUser(emailInput.value, passwordInput.value) &&
+      logUserIn(emailInput.value);
+  });
 }
 
 function registerPageScript() {

@@ -38,10 +38,7 @@ function loadNewPage(event) {
 
 async function routeChangeHandler() {
   var { pathname } = location;
-  if (pathname == "/") {
-    redirectUnAuthorizedUsers();
-    return;
-  }
+  pathname == "/" && redirectUnAuthorizedUsers();
 
   var route = routes[pathname] || routes[404];
   var newPage = await fetch(route.location).then(function (response) {
