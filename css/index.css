@@ -267,3 +267,7 @@ form p[class*="Feedback"] {
 
 /* 3.5- Not Found Page
 ============================== */
+
+.notFound_page {
+  text-align: center;
+}
