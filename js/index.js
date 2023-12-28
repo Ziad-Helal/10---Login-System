@@ -96,8 +96,26 @@ function notFoundPageScript() {
 }
 
 function isValidInput(inputElement, regexRule, feedbackElement) {
+  var errorMessage = "";
+  switch (inputElement.id) {
+    case "nameInput":
+      errorMessage = "a-z, A-Z, _, space, 3-14 characters.";
+      break;
+    case "emailInput":
+      errorMessage = "Ex:. me@ex.com";
+      break;
+    case "passwordInput":
+      errorMessage = "a-z, A-Z, _, space, dot, at least 5 characters.";
+      break;
+    default:
+      errorMessage = "Wrong!";
+      break;
+  }
+
   inputElement.addEventListener("input", function (event) {
-    feedbackElement.innerText = regexRule.test(event.target.value) ? "" : "No!";
+    feedbackElement.innerText = regexRule.test(event.target.value)
+      ? ""
+      : errorMessage;
   });
 }
 

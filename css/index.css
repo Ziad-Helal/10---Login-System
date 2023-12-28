@@ -176,6 +176,7 @@ h1 a.localPage {
 
 .welcome #user {
   color: chocolate;
+  text-transform: capitalize;
 }
 
 .allUsers {
